@@ -12,14 +12,18 @@ const Home = () => {
 
   const handleBuy = (id, title, price) => {
     console.log(id, title, price);
+    if(localStorage.getItem("LoginStatus") === "false"){
     if (localStorage.getItem("itemID") === null) {
-      localStorage.clear();
       localStorage.setItem("itemID", id);
       localStorage.setItem("itemName", title);
       localStorage.setItem("itemPrice", price);
       alert("You can only buy one item at a time");
       window.location.href = "/checkout";
     }
+  }else{
+    alert("You must be logged in to buy an item");
+    window.location.href = "/login";
+  }
   };
 
   const responsive = {

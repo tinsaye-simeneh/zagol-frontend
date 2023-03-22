@@ -23,7 +23,7 @@ export default function Login() {
           "phoneNumber",
           response.data.userDetails.phoneNumber
         );
-        localStorage.setItem("AccessToken", "response.data.tokens.accessToken");
+        localStorage.setItem("AccessToken", response.data.tokens.accessToken);
         localStorage.setItem("loginStatus", "true");
         window.location.href = "/";
       })
@@ -69,7 +69,7 @@ export default function Login() {
             <div className="mt-4">
               <span className="mt-3">
                 Don't have an account?{" "}
-                <a href="#Signup" className="text-decoration-none">
+                <a href="/signup" className="text-decoration-none">
                   Sign Up
                 </a>
               </span>

@@ -3,6 +3,14 @@ import logo from "../assets/images/logo.png";
 import { Outlet, Link } from "react-router-dom";
 
 const Navbar = () => {
+
+  const LoginStat = localStorage.getItem("LoginStatus");
+
+  const handleLogout = () => {
+    localStorage.setItem("LoginStatus", "false");
+    window.location.href = "/";
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-white pt-3">
@@ -51,14 +59,7 @@ const Navbar = () => {
               <li className="nav-item mx-4" id="Account">
                 <Link to="/login" className="nav-link">
                   <button className="btn btn-outline-dark full-width">
-                  Login
-                  </button>
-                </Link>
-              </li>
-              <li className="nav-item" id="Account">
-                <Link to="/signup" className="nav-link">
-                  <button className="btn btn-outline-dark">
-                  Sign Up
+                  Account
                   </button>
                 </Link>
               </li>

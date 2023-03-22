@@ -29,7 +29,7 @@ export default function Signup() {
           "phoneNumber",
           response.data.userDetails.phoneNumber
         );
-        localStorage.setItem("AccessToken", "response.data.tokens.accessToken");
+        localStorage.setItem("AccessToken", response.data.tokens.accessToken);
         localStorage.setItem("loginStatus", "true");
         window.location.href = "/";
       })
