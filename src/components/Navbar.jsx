@@ -27,19 +27,19 @@ const Navbar = () => {
           >
             <ul className="navbar-nav ms-auto">
               <li className="nav-item active">
-                <Link to="/" className="nav-link">
+                <a href="/" className="nav-link">
                   Home
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link to="/projects" className="nav-link">
+                <a href="/projects" className="nav-link">
                   Portfolio
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link to="/contact" className="nav-link">
+                <a href="/contact" className="nav-link">
                   Contact Us
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
