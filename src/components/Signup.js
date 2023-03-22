@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Login.css";
 
-export default function Login() {
+export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,12 +22,12 @@ export default function Login() {
     <div className="container-fluid text-center my-3">
       <div className="row bottomMargin">
         <div className="col-sm-6 mt-5 illust-mobile">
-         <h1 className="text-center mt-5 pt-5"> Zagol Arts </h1>
+        <h1 className="text-center mt-5 pt-5"> Zagol Arts </h1>
         </div>
 
         <div className="col-sm-6 mt-5">
           <div className="header text-decoration-underline">
-            <h4>Login</h4>
+            <h4>Signup</h4>
           </div>
           <div>
             <form className="w-100" onSubmit={handleSubmit}>
@@ -49,14 +49,14 @@ export default function Login() {
                 type="submit"
                 className="btn text-white mt-4 login-btn btn-success"
               >
-                Login
+                Signup
               </button>
             </form>
             <div className="mt-4">
               <span className="mt-3">
-                Don't have an account?{" "}
-                <a href="#Signup" className="text-decoration-none">
-                  Sign Up
+                Already have an account?{" "}
+                <a href="/login" className="text-decoration-none">
+                  Login
                 </a>
               </span>
             </div>

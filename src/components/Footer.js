@@ -12,7 +12,8 @@ const Footer = () => {
     <div className="container-fluid bg-white pt-2" >
       <div className="row">
         <div className="col-md-12 text-center text-black py-3">
-        Zagol is the first online art selling website in Ethiopia with online payment gateways.
+          <hr/>
+        Zagol is the first online art selling website in Ethiopia with high end system. We are a team of young and passionate artists and developers who are working together to make art accessible to everyone. We are also working on a mobile app to make the process even easier.
         </div>
         <hr/>
       </div>

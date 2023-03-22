@@ -2,11 +2,28 @@ import React from "react";
 import "../index.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Logo from "../assets/images/1.jpg";
 import CarouselImg from "../assets/images/dashboard.png";
 import { Data } from "./data.js";
 
 const Home = () => {
+  localStorage.clear();
+
+  const Id = []
+  const Title = []
+  const Price = []
+
+  const handleBuy = (id, title, price) => {
+    console.log(id, title, price);
+    if (localStorage.getItem("itemID") === null) {
+      localStorage.clear();
+      localStorage.setItem("itemID", id);
+      localStorage.setItem("itemName", title);
+      localStorage.setItem("itemPrice", price);
+      alert("You can only buy one item at a time");
+      window.location.href = "/checkout";
+    }
+  };
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -105,14 +122,19 @@ const Home = () => {
                 <p class="card-text">Artist: {data.Artist}</p>
                 <p class="card-text">Price: {data.price}</p>
                 <p class="card-text">Category: {data.category}</p>
+                <button
+                  class="btn btn-success"
+                  type="submit"
+                  onClick={(e) => handleBuy(data.id, data.title, data.price)}
+                >
+                  Buy Now
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <h1 className="text-center my-2"> 
-          Our Categories
-        </h1>
+      <h1 className="text-center my-2">Our Categories</h1>
       <Carousel responsive={responsive}>
         <div className="text-center">
           <img src={CarouselImg} alt="Logo" />

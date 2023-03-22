@@ -1,11 +1,11 @@
-input,
-button {
+.login-input,
+.login-btn {
   width: 75%;
 }
 
 @media (max-width: 768px) {
-  input,
-  button {
+  .login-input,
+  .login-btn {
     width: 100%;
   }
   span {
