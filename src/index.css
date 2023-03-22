@@ -20,6 +20,10 @@
 .bg-silver{
     background-color: #f2f2f2;
 }
+.carousel-img{
+    width: 100%;
+    height: 25rem;
+}
 @media screen and (max-width: 768px) {
     .heading-text{
         font-size: 1.5rem;

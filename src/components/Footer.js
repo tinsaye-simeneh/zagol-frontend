@@ -12,7 +12,7 @@ const Footer = () => {
     <div className="container-fluid bg-white pt-2" >
       <div className="row">
         <div className="col-md-4 text-black pt-1">
-          © 2021. All Rights Reserved. Designed by
+          © 2023. All Rights Reserved. Designed by
           <a href="https://t.me/uixnature" className="caros text-decoration-none">
             {" "}
             uix Nature
