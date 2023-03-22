@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/images/logo.png";
 import { Outlet, Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -7,7 +8,8 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-black pt-3">
         <div className="container py-3">
           <a className="navbar-brand text-white" href="./Home">
-            Logo
+            <img className="logo" src={logo} alt="logo..." />
+           Zagol Arts
           </a>
           <button
             className="navbar-toggler"
@@ -26,20 +28,34 @@ const Navbar = () => {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item active">
-                <a href="/" className="nav-link">
+              <li className="nav-item active mt-2 mx-4">
+                <Link to="/" className="nav-link">
                   Home
-                </a>
+                </Link>
               </li>
-              <li className="nav-item">
-                <a href="/projects" className="nav-link">
+              <li className="nav-item mt-2 mx-4">
+                <Link to="/projects" className="nav-link">
                   Portfolio
-                </a>
+                </Link>
+              </li>
+              <li className="nav-item mt-2 mx-4">
+                <Link to="/contact" className="nav-link">
+                  Contact Us
+                </Link>
+              </li>
+              <li className="nav-item me-4">
+                <Link to="/contact" className="nav-link">
+                  <button className="btn btn-outline-light">
+                  Login
+                  </button>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="/contact" className="nav-link">
-                  Contact Us
-                </a>
+                <Link to="/contact" className="nav-link">
+                  <button className="btn btn-outline-light">
+                  Sign Up
+                  </button>
+                </Link>
               </li>
             </ul>
           </div>
