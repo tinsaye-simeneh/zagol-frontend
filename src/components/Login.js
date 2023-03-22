@@ -1,23 +1,34 @@
 import React, { useState } from "react";
 import "../Login.css";
+import axios from "axios";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loginStatus, setLoginStatus] = useState("");
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    axios
+      .post("https://home.heyeman.com/users/auth/login", {
+        email: email,
+        password: password,
+      })
+      .then((response) => {
+        if (response.data.message) {
+          setLoginStatus(response.data.message);
+        } else {
+          setLoginStatus(response.data[0].email);
+          localStorage.setItem("email", response.data[0].email);
+          localStorage.setItem("name", response.data[0].name);
+          localStorage.setItem("id", response.data[0].id);
+          localStorage.setItem("loginStatus", "true");
+          window.location.href = "/";
+        }
+      });
+  };
+  
 
-    const defemail = "admin@gmail.com";
-    const defpassword = "admin";
-
-    if (email === defemail && password === defpassword) {
-      alert(`Login Successfully!`);
-      window.location.reload();
-    } else {
-      alert(`Invalid Credentials!`);
-    }
-  }
   return (
     <div className="container-fluid text-center my-3">
       <div className="row bottomMargin">
@@ -48,6 +59,7 @@ export default function Login() {
               <button
                 type="submit"
                 className="btn text-white mt-4 login-btn btn-success"
+                onSubmit={handleSubmit}
               >
                 Login
               </button>

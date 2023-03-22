@@ -8,10 +8,6 @@ import { Data } from "./data.js";
 const Home = () => {
   localStorage.clear();
 
-  const Id = []
-  const Title = []
-  const Price = []
-
   const handleBuy = (id, title, price) => {
     console.log(id, title, price);
     if (localStorage.getItem("itemID") === null) {
