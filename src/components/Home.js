@@ -1,10 +1,31 @@
 import React from "react";
 import "../index.css";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import Logo from "../assets/images/1.jpg";
-import Carousel from "../assets/images/dashboard.png";
+import CarouselImg from "../assets/images/dashboard.png";
 import { Data } from "./data.js";
 
 const Home = () => {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
   return (
     <div class="container-fluid bg-silver py-5">
       <div
@@ -19,7 +40,7 @@ const Home = () => {
           <div class="carousel-item active">
             <img
               class="w-100 d-block carousel-img"
-              src={Carousel}
+              src={CarouselImg}
               alt="First slide"
             />
             <div class="carousel-caption d-none d-md-block bg-dark">
@@ -29,7 +50,7 @@ const Home = () => {
           <div class="carousel-item">
             <img
               class="d-block w-100 carousel-img"
-              src={Carousel}
+              src={CarouselImg}
               alt="Second slide"
             />
             <div class="carousel-caption d-none d-md-block bg-dark">
@@ -38,8 +59,8 @@ const Home = () => {
           </div>
           <div class="carousel-item">
             <img
-              class="d-block w-100 carousel-img"
-              src={Carousel}
+              class="d-block w-100 carousel-img mx-5"
+              src={CarouselImg}
               alt="Third slide"
             />
             <div class="carousel-caption d-none d-md-block bg-dark">
@@ -66,7 +87,6 @@ const Home = () => {
           <span class="sr-only"></span>
         </a>
       </div>
-
       <div class="row mx-auto text-center bg-silver py-5">
         <h1 className="text-dark pb-5">Latest Products</h1>
         {Data.map((data) => (
@@ -90,8 +110,30 @@ const Home = () => {
           </div>
         ))}
       </div>
-
-
+      <h1 className="text-center my-2"> 
+          Our Categories
+        </h1>
+      <Carousel responsive={responsive}>
+        <div className="text-center">
+          <img src={CarouselImg} alt="Logo" />
+          <p className="text-center">Item 1</p>
+        </div>
+        <div className="text-center">
+          {" "}
+          <img src={CarouselImg} alt="Logo" />
+          <p className="text-center">Item 1</p>
+        </div>
+        <div className="text-center">
+          <img src={CarouselImg} alt="Logo" />
+          <p className="text-center">Item 1</p>
+        </div>
+        <div className="text-center">
+          {" "}
+          <img src={CarouselImg} alt="Logo" />
+          <p className="text-center">Item 1</p>
+        </div>
+      </Carousel>
+      ;
     </div>
   );
 };
