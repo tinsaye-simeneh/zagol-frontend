@@ -5,11 +5,13 @@ import { Outlet, Link } from "react-router-dom";
 const Navbar = () => {
 
   const LoginStat = localStorage.getItem("LoginStatus");
+  let Redirect = "";
 
-  const handleLogout = () => {
-    localStorage.setItem("LoginStatus", "false");
-    window.location.href = "/";
-  };
+  if(LoginStat === "true"){
+    Redirect = "/profile";
+  }else{
+    Redirect = "/login";
+  }
 
   return (
     <>
@@ -57,16 +59,9 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item mx-4" id="Account">
-                <Link to="/login" className="nav-link">
+                <Link to={Redirect} className="nav-link">
                   <button className="btn btn-outline-dark full-width">
                   Account
-                  </button>
-                </Link>
-              </li>
-              <li className="nav-item" id="Profile">
-                <Link to="" className="nav-link">
-                  <button className="btn btn-outline-dark">
-                  Profile
                   </button>
                 </Link>
               </li>
