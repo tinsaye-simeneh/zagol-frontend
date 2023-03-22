@@ -2,7 +2,7 @@ import React from "react";
 
 const Profile = () => {
   const handleLogout = () => {
-    localStorage.setItem("LoginStatus", "false");
+    localStorage.setItem("loginStatus", "false");
     window.location.href = "/";
   };
 

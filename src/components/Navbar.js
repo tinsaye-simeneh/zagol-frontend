@@ -4,7 +4,7 @@ import { Outlet, Link } from "react-router-dom";
 
 const Navbar = () => {
 
-  const LoginStat = localStorage.getItem("LoginStatus");
+  const LoginStat = localStorage.getItem("loginStatus");
   let Redirect = "";
 
   if(LoginStat === "true"){
