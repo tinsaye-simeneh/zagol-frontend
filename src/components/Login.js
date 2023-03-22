@@ -5,7 +5,7 @@ import axios from "axios";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loginStatus, setLoginStatus] = useState("");
+  const [loginStatus, setLoginStatus] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,19 +15,22 @@ export default function Login() {
         password: password,
       })
       .then((response) => {
-        if (response.data.message) {
-          setLoginStatus(response.data.message);
-        } else {
-          setLoginStatus(response.data[0].email);
-          localStorage.setItem("email", response.data[0].email);
-          localStorage.setItem("name", response.data[0].name);
-          localStorage.setItem("id", response.data[0].id);
-          localStorage.setItem("loginStatus", "true");
-          window.location.href = "/";
-        }
+        localStorage.setItem("email", response.data.userDetails.email);
+        localStorage.setItem("Firstname", response.data.userDetails.firstname);
+        localStorage.setItem("LastName", response.data.userDetails.lastname);
+        localStorage.setItem("id", response.data.userDetails.id);
+        localStorage.setItem(
+          "phoneNumber",
+          response.data.userDetails.phoneNumber
+        );
+        localStorage.setItem("AccessToken", "response.data.tokens.accessToken");
+        localStorage.setItem("loginStatus", "true");
+        window.location.href = "/";
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
-  
 
   return (
     <div className="container-fluid text-center my-3">
@@ -59,7 +62,6 @@ export default function Login() {
               <button
                 type="submit"
                 className="btn text-white mt-4 login-btn btn-success"
-                onSubmit={handleSubmit}
               >
                 Login
               </button>

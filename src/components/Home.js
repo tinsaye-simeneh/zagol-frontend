@@ -6,7 +6,9 @@ import CarouselImg from "../assets/images/dashboard.png";
 import { Data } from "./data.js";
 
 const Home = () => {
-  localStorage.clear();
+  localStorage.removeItem("itemID");
+  localStorage.removeItem("itemName");
+  localStorage.removeItem("itemPrice");
 
   const handleBuy = (id, title, price) => {
     console.log(id, title, price);

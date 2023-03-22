@@ -5,7 +5,7 @@ import axios from "axios";
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loginStatus, setLoginStatus] = useState("");
+  const [loginStatus, setLoginStatus] = useState(false);
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -21,16 +21,20 @@ export default function Signup() {
         phoneNumber: phoneNumber,
       })
       .then((response) => {
-          setLoginStatus(response.data[0].email);
-          localStorage.setItem("email", response.data[0].email);
-          localStorage.setItem("Firstname", response.data[0].firstname);
-          localStorage.setItem("LastName", response.data[0].lastname);
-          localStorage.setItem("id", response.data[0].id);
-          localStorage.setItem("phoneNumber", response.data[0].phoneNumber);
-          
-          localStorage.setItem("loginStatus", "true");
-          window.location.href = "/";
-        }
+        localStorage.setItem("email", response.data.userDetails.email);
+        localStorage.setItem("Firstname", response.data.userDetails.firstname);
+        localStorage.setItem("LastName", response.data.userDetails.lastname);
+        localStorage.setItem("id", response.data.userDetails.id);
+        localStorage.setItem(
+          "phoneNumber",
+          response.data.userDetails.phoneNumber
+        );
+        localStorage.setItem("AccessToken", "response.data.tokens.accessToken");
+        localStorage.setItem("loginStatus", "true");
+        window.location.href = "/";
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 

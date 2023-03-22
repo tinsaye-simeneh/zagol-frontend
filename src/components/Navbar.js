@@ -48,17 +48,24 @@ const Navbar = () => {
                   Event
                 </Link>
               </li>
-              <li className="nav-item mx-4">
+              <li className="nav-item mx-4" id="Account">
                 <Link to="/login" className="nav-link">
                   <button className="btn btn-outline-dark full-width">
                   Login
                   </button>
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item" id="Account">
                 <Link to="/signup" className="nav-link">
                   <button className="btn btn-outline-dark">
                   Sign Up
+                  </button>
+                </Link>
+              </li>
+              <li className="nav-item" id="Profile">
+                <Link to="" className="nav-link">
+                  <button className="btn btn-outline-dark">
+                  Profile
                   </button>
                 </Link>
               </li>
