@@ -5,9 +5,9 @@ import { Outlet, Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-black pt-3">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white pt-3">
         <div className="container py-3">
-          <a className="navbar-brand text-white" href="./Home">
+          <a className="navbar-brand text-dark" href="./Home">
             <img className="logo" src={logo} alt="logo..." />
            Zagol Arts
           </a>
@@ -43,16 +43,21 @@ const Navbar = () => {
                   Contact Us
                 </Link>
               </li>
+              <li className="nav-item mt-2 mx-4">
+                <Link to="" className="nav-link">
+                  Event
+                </Link>
+              </li>
               <li className="nav-item me-4">
                 <Link to="/contact" className="nav-link">
-                  <button className="btn btn-outline-light">
+                  <button className="btn btn-outline-dark">
                   Login
                   </button>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/contact" className="nav-link">
-                  <button className="btn btn-outline-light">
+                  <button className="btn btn-outline-dark">
                   Sign Up
                   </button>
                 </Link>

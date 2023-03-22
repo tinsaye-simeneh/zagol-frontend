@@ -11,6 +11,12 @@ const Footer = () => {
   return (
     <div className="container-fluid bg-white pt-2" >
       <div className="row">
+        <div className="col-md-12 text-center text-black py-3">
+        Zagol is the first online art selling website in Ethiopia with online payment gateways.
+        </div>
+        <hr/>
+      </div>
+      <div className="row">
         <div className="col-md-4 text-black pt-1">
           © 2023. All Rights Reserved. Designed by
           <a href="https://t.me/uixnature" className="caros text-decoration-none">

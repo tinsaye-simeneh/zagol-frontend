@@ -1,0 +1,21 @@
+input,
+button {
+  width: 75%;
+}
+
+@media (max-width: 768px) {
+  input,
+  button {
+    width: 100%;
+  }
+  span {
+    text-align: center;
+    display: block;
+  }
+  .illust-mobile {
+    display: none;
+  }
+  .bottomMargin{
+    margin-bottom: 30%;
+  }
+}
