@@ -18,7 +18,7 @@ export default function Login() {
         localStorage.setItem("email", response.data.userDetails.email);
         localStorage.setItem("Firstname", response.data.userDetails.firstname);
         localStorage.setItem("LastName", response.data.userDetails.lastname);
-        localStorage.setItem("id", response.data.userDetails.id);
+        localStorage.setItem("id", response.data.userDetails._id);
         localStorage.setItem(
           "phoneNumber",
           response.data.userDetails.phoneNumber
@@ -36,7 +36,7 @@ export default function Login() {
     <div className="container-fluid text-center my-3">
       <div className="row bottomMargin">
         <div className="col-sm-6 mt-5 illust-mobile">
-         <h1 className="text-center mt-5 pt-5"> Zagol Arts </h1>
+          <h1 className="text-center mt-5 pt-5"> Zagol Arts </h1>
         </div>
 
         <div className="col-sm-6 mt-5">
