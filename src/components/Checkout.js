@@ -25,7 +25,7 @@ const Checkout = () => {
   const handleSuccess = () => {
     if (loginStatus === "true") {
       request();
-      alert("Payment Successful");
+      alert("Order Successfully Received");
       localStorage.removeItem("itemID");
       localStorage.removeItem("itemName");
       localStorage.removeItem("itemPrice");
