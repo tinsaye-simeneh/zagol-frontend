@@ -88,7 +88,7 @@ const Home = () => {
           </div>
         </div>
         <a
-          class="carousel-control-prev bg-light"
+          class="carousel-control-prev bg-light w-20"
           href="#carouselExampleControls"
           role="button"
           data-slide="prev"
