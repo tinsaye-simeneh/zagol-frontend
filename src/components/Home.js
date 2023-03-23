@@ -88,12 +88,12 @@ const Home = () => {
           </div>
         </div>
         <a
-          class="carousel-control-prev bg-light w-25"
+          class="carousel-control-prev bg-dark"
           href="#carouselExampleControls"
           role="button"
           data-slide="prev"
         >
-          <span class="carousel-control-prev-icon text-dark" aria-hidden="true"></span>
+          <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
         <a
