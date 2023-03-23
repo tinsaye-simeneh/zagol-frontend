@@ -30,15 +30,15 @@ const Home = () => {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      items: 1,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 1,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      items: 1,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -139,20 +139,6 @@ const Home = () => {
       <h1 className="text-center my-2">Our Categories</h1>
       <Carousel responsive={responsive}>
         <div className="text-center">
-          <img src={CarouselImg} alt="Logo" />
-          <p className="text-center">Item 1</p>
-        </div>
-        <div className="text-center">
-          {" "}
-          <img src={CarouselImg} alt="Logo" />
-          <p className="text-center">Item 1</p>
-        </div>
-        <div className="text-center">
-          <img src={CarouselImg} alt="Logo" />
-          <p className="text-center">Item 1</p>
-        </div>
-        <div className="text-center">
-          {" "}
           <img src={CarouselImg} alt="Logo" />
           <p className="text-center">Item 1</p>
         </div>
