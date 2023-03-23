@@ -30,6 +30,13 @@ const Checkout = () => {
     }
   };
 
+  const handleCancel = () => {
+    localStorage.removeItem("itemID");
+    localStorage.removeItem("itemName");
+    localStorage.removeItem("itemPrice");
+    window.location.href = "/";
+  };
+
   return (
     <div className="container text-center my-5">
       <div className="row">
