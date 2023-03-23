@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../index.css";
 
 const Exclusive = () => {
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [size, setSize] = useState("");
@@ -16,14 +15,12 @@ const Exclusive = () => {
         <div className="col-md-6">
           <h1
             className="caros text-dark px-5 pt-5 leftText"
-            style={{fontWeight: "bold" }}
+            style={{ fontWeight: "bold" }}
           >
             Lets Chat <br />
             Tell me about <br /> your Art specifications
           </h1>
-          <p
-            className="caros text-dark px-5 pt-2"
-          >
+          <p className="caros text-dark px-5 pt-2">
             Lets create something better
           </p>
         </div>
@@ -37,13 +34,19 @@ const Exclusive = () => {
               className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs"
               placeholder="Full Name"
               onChange={(e) => setName(e.target.value)}
-            /> <input
-            type="email"
-            className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-
+            />{" "}
+            <input
+              type="email"
+              className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <select name="language" id="language">
+              <option value="javascript">JavaScript</option>
+              <option value="python">Python</option>
+              <option value="c++">C++</option>
+              <option value="java">Java</option>
+            </select>
             <input
               type="text"
               className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs"
