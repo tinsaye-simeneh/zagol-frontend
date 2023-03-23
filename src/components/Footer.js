@@ -42,7 +42,7 @@ const Footer = () => {
             Tinsaye{" "}
           </a>
           with{" "}
-          <a href="https://github.com/Reaclate" className="text-black caros">
+          <a href="https://github.com/heyeman" className="text-black caros">
             Heyeman
           </a>
         </div>
