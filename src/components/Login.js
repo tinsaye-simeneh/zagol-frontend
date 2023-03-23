@@ -48,7 +48,7 @@ export default function Login() {
               <input
                 type="email"
                 className="border border-secondary mt-5 p-2 mb-4 rounded login-input"
-                placeholder="Enter your Username"
+                placeholder="Enter your Email"
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
