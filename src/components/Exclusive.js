@@ -41,7 +41,7 @@ const Exclusive = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
             <div className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs">
-              <select name="type" id="type">
+              <select name="type" id="type" className="border-none">
                 <option value="paint1">Paint1</option>
                 <option value="paint2">Paint2</option>
                 <option value="paint3">Paint3</option>
