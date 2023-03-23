@@ -12,7 +12,7 @@ const Exclusive = () => {
   const handleOrder = (e) => {
     e.preventDefault();
     axios
-      .post("http://home.heyeman.com//buy/exclusive", {
+      .post("https://home.heyeman.com//buy/exclusive", {
         name: name,
         size: size,
         email: email,
