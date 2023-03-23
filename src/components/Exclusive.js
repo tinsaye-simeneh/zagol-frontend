@@ -77,13 +77,18 @@ const Exclusive = () => {
               <option value="paint3">Paint3</option>
               <option value="paint4">Paint4</option>
             </select>
-            <input
-              type="text"
-              className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs"
-              placeholder="Size"
+            <select
+              name="size"
+              id="size"
+              className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs pe-4"
               onChange={(e) => setSize(e.target.value)}
               required
-            />
+            >
+              <option value="paint1">2x3</option>
+              <option value="paint2">2x4</option>
+              <option value="paint3">3x5</option>
+              <option value="paint4">4x3</option>
+            </select>
             <input
               type="file"
               className="border border-secondary bg-white text-secondary rounded p-2 mb-3 contactinputs"
