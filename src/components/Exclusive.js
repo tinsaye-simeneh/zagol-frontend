@@ -8,6 +8,26 @@ const Exclusive = () => {
   const [photo, setPhoto] = useState("");
   const [type, setType] = useState("");
 
+  const handleOrder = () => {
+    axios
+      .post("http://home.heyeman.com//buy/exclusive", {
+        name: name,
+        size: size,
+        email: email,
+        photo: photo,
+      })
+      .then((res) => {
+        console.log(res);
+        alert(
+          "Thanks for your order, we will get back to you as soon as possible."
+        );
+        window.location.href = "/";
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="container-fluid bg-silver py-4">
       <div className="row text-center">
@@ -68,7 +88,11 @@ const Exclusive = () => {
               placeholder="Type of art"
               onChange={(e) => setType(e.target.value)}
             />
-            <button className="btn btn-success mt-3 contactinputs">
+            <button
+              className="btn btn-success mt-3 contactinputs"
+              type="submit"
+              onClick={handleOrder}
+            >
               Order
             </button>
           </form>
