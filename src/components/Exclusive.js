@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../index.css";
+import axios from "axios";
 
 const Exclusive = () => {
   const [name, setName] = useState("");
