@@ -26,7 +26,9 @@ const Checkout = () => {
     if (loginStatus === "true") {
       request();
       alert("Payment Successful");
-      localStorage.clear();
+      localStorage.removeItem("itemID");
+      localStorage.removeItem("itemName");
+      localStorage.removeItem("itemPrice");
       window.location.href = "/";
     } else {
       alert("Please Login to continue");
