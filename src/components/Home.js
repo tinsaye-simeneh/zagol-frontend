@@ -12,18 +12,18 @@ const Home = () => {
 
   const handleBuy = (id, title, price) => {
     console.log(id, title, price);
-    if(localStorage.getItem("LoginStatus") === "false"){
-    if (localStorage.getItem("itemID") === null) {
-      localStorage.setItem("itemID", id);
-      localStorage.setItem("itemName", title);
-      localStorage.setItem("itemPrice", price);
-      alert("You can only buy one item at a time");
-      window.location.href = "/checkout";
+    if (localStorage.getItem("LoginStatus") === "false") {
+      if (localStorage.getItem("itemID") === null) {
+        localStorage.setItem("itemID", id);
+        localStorage.setItem("itemName", title);
+        localStorage.setItem("itemPrice", price);
+        alert("You can only buy one item at a time");
+        window.location.href = "/checkout";
+      }
+    } else {
+      alert("You must be logged in to buy an item");
+      window.location.href = "/login";
     }
-  }else{
-    alert("You must be logged in to buy an item");
-    window.location.href = "/login";
-  }
   };
 
   const responsive = {
@@ -89,15 +89,19 @@ const Home = () => {
         </div>
         <a
           class="carousel-control-prev bg-dark"
+          style={{ height: "2rem" }}
           href="#carouselExampleControls"
           role="button"
           data-slide="prev"
         >
-          <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+          <span
+            class="carousel-control-prev-icon carousel-dark"
+            aria-hidden="true"
+          ></span>
           <span class="sr-only">Previous</span>
         </a>
         <a
-          class="carousel-control-next bg-light"
+          class="carousel-control-next bg-dark"
           href="#carouselExampleControls"
           role="button"
           data-slide="next"
@@ -139,6 +143,20 @@ const Home = () => {
       <h1 className="text-center my-2">Our Categories</h1>
       <Carousel responsive={responsive}>
         <div className="text-center">
+          <img src={CarouselImg} alt="Logo" />
+          <p className="text-center">Item 1</p>
+        </div>
+        <div className="text-center">
+          {" "}
+          <img src={CarouselImg} alt="Logo" />
+          <p className="text-center">Item 1</p>
+        </div>
+        <div className="text-center">
+          <img src={CarouselImg} alt="Logo" />
+          <p className="text-center">Item 1</p>
+        </div>
+        <div className="text-center">
+          {" "}
           <img src={CarouselImg} alt="Logo" />
           <p className="text-center">Item 1</p>
         </div>
