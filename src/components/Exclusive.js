@@ -7,7 +7,6 @@ const Exclusive = () => {
   const [size, setSize] = useState("");
   const [photo, setPhoto] = useState("");
   const [type, setType] = useState("");
-  const [description, setDescription] = useState("");
 
   return (
     <div className="container-fluid bg-silver py-4">
@@ -64,14 +63,6 @@ const Exclusive = () => {
               className="border border-secondary bg-white text-secondary rounded p-2 mb-3 contactinputs"
               placeholder="Type of art"
               onChange={(e) => setType(e.target.value)}
-            />
-            <textarea
-              className="border border-secondary bg-white text-secondary rounded p-2 mb-3 contactinputs"
-              style={{ resize: "none" }}
-              cols="30"
-              rows="5"
-              placeholder="Description of the art"
-              onChange={(e) => setDescription(e.target.value)}
             />
             <button className="btn btn-success mt-3 contactinputs">
               Order
