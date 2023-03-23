@@ -8,7 +8,7 @@ const Checkout = () => {
   const loginStatus = localStorage.getItem("loginStatus");
 
   const handleSuccess = () => {
-    if (loginStatus !== "true") {
+    if (loginStatus === "true") {
       axios
         .post("http://home.heyeman.com/buy/purchase", {
           itemID: ItemID,
