@@ -21,18 +21,16 @@ const Checkout = () => {
     <div className="container text-center my-5">
       <div className="row">
         <div className="col-md-6 rounded border p-4 mx-auto">
-          <h1>Checkout</h1>
-          <p>Item ID: {ItemID}</p>
-          <p>Item Name: {ItemName}</p>
-          <p>Item Price: {ItemPrice}</p>
+          <h1> Checkout </h1> <p> Item ID: {ItemID} </p>{" "}
+          <p> Item Name: {ItemName} </p> <p> Item Price: {ItemPrice} </p>{" "}
           <a className="btn btn-success mx-3" onSubmit={handleSuccess}>
-            Buy Now
-          </a>
+            Buy Now{" "}
+          </a>{" "}
           <a className="btn btn-danger" href="/">
-            Cancel
-          </a>
-        </div>
-      </div>
+            Cancel{" "}
+          </a>{" "}
+        </div>{" "}
+      </div>{" "}
     </div>
   );
 };
