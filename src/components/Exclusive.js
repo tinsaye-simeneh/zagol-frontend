@@ -8,8 +8,7 @@ const Exclusive = () => {
   const [photo, setPhoto] = useState("");
   const [type, setType] = useState("");
 
-  const handleOrder = (e) => {
-    e.preventDefault();
+  const handleOrder = () => {
     axios
       .post("http://home.heyeman.com//buy/exclusive", {
         name: name,
