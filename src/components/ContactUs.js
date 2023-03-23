@@ -1,12 +1,33 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../index.css";
+import axios from "axios";
 
 const ContactUs = () => {
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+
+  const handleContact = (e) => {
+    e.preventDefault();
+    axios
+      .post("https://home.heyeman.com/users/contact", {
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+      })
+      .then((res) => {
+        console.log(res);
+        alert(
+          "Thanks for Contacting US, we will get back to you as soon as possible."
+        );
+        window.location.href = "/";
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="container-fluid bg-silver py-4">
@@ -14,14 +35,12 @@ const ContactUs = () => {
         <div className="col-md-6">
           <h1
             className="caros text-dark px-5 pt-5 leftText"
-            style={{fontWeight: "bold" }}
+            style={{ fontWeight: "bold" }}
           >
             Lets Chat <br />
             Tell me about <br /> your Concerns
           </h1>
-          <p
-            className="caros text-dark px-5 pt-2"
-          >
+          <p className="caros text-dark px-5 pt-2">
             Lets create something better
           </p>
         </div>
@@ -56,9 +75,7 @@ const ContactUs = () => {
               placeholder="Message"
               onChange={(e) => setMessage(e.target.value)}
             />
-            <button className="btn btn-success mt-3 contactinputs">
-              Send
-            </button>
+            <button className="btn btn-success mt-3 contactinputs">Send</button>
           </form>
         </div>
       </div>
