@@ -64,6 +64,7 @@ const Exclusive = () => {
               name="type"
               id="type"
               className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs pe-4"
+              onChange={(e) => setType(e.target.value)}
             >
               <option value="paint1">Paint1</option>
               <option value="paint2">Paint2</option>
@@ -81,12 +82,6 @@ const Exclusive = () => {
               className="border border-secondary bg-white text-secondary rounded p-2 mb-3 contactinputs"
               placeholder="photo Upload"
               onChange={(e) => setPhoto(e.target.value)}
-            />
-            <input
-              type="text"
-              className="border border-secondary bg-white text-secondary rounded p-2 mb-3 contactinputs"
-              placeholder="Type of art"
-              onChange={(e) => setType(e.target.value)}
             />
             <button
               className="btn btn-success mt-3 contactinputs"
