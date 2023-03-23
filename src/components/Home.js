@@ -12,7 +12,7 @@ const Home = () => {
 
   const handleBuy = (id, title, price) => {
     console.log(id, title, price);
-    if (localStorage.getItem("loginStatus") === "false") {
+    if (localStorage.getItem("loginStatus") === "true") {
       if (localStorage.getItem("itemID") === null) {
         localStorage.setItem("itemID", id);
         localStorage.setItem("itemName", title);
