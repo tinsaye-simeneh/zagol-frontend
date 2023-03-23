@@ -40,12 +40,14 @@ const Exclusive = () => {
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <select name="language" id="language">
-              <option value="javascript">JavaScript</option>
-              <option value="python">Python</option>
-              <option value="c++">C++</option>
-              <option value="java">Java</option>
-            </select>
+            <div className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs">
+              <select name="language" id="language">
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="c++">C++</option>
+                <option value="java">Java</option>
+              </select>
+            </div>
             <input
               type="text"
               className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs"
