@@ -34,10 +34,14 @@ const Footer = () => {
         </div>
         <div className="col-md-6 notimpo text-center text-black">
           <span className="px-2">Proudly powered by</span>
-          <a href="https://github.com/Reaclate" className="text-black caros">
-            <img src={reaclate} alt="reaclate" className="img-fluid mb-2" />
+          <a
+            href="https://github.com/tinsaye-simeneh"
+            className="text-black caros"
+          >
+            {" "}
+            Tinsaye{" "}
           </a>
-          with
+          with{" "}
           <a href="https://github.com/Reaclate" className="text-black caros">
             Heyeman
           </a>
