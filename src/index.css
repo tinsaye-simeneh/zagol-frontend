@@ -1,46 +1,54 @@
 @font-face {
-    font-family: 'Caros Regular';
-    src: url('./assets/fonts/Caros-Regular.woff') format('woff');
-    }
-    .caros {
-    font-family: 'Caros Regular';
-    }
-.heading-text{
-    font-size: 2.5rem;
+  font-family: "Caros Regular";
+  src: url("./assets/fonts/Caros-Regular.woff") format("woff");
 }
-.heading-text2{
-    font-size: 1.5rem;
+.caros {
+  font-family: "Caros Regular";
 }
-.contactinputs{
-    width: 80%;
+.heading-text {
+  font-size: 2.5rem;
 }
-.leftText{
-    font-size: 3.5rem;
+.heading-text2 {
+  font-size: 1.5rem;
 }
-.bg-silver{
-    background-color: #f2f2f2;
+.contactinputs {
+  width: 80%;
 }
-.carousel-img{
-    width: 100%;
-    height: 25rem;
+.leftText {
+  font-size: 3.5rem;
+}
+.bg-silver {
+  background-color: #f2f2f2;
+}
+.carousel-img {
+  width: 100%;
+  height: 25rem;
+}
+.carousel-btn {
+  margin-top: 12%;
+  height: 10%;
 }
 @media screen and (max-width: 768px) {
-    .heading-text{
-        font-size: 1.5rem;
-    }
-    .heading-text2{
-        font-size: 1rem;
-    }
-    .notimpo{
-        display:none;
-    }
-    .contactinputs{
-        width: 100%;
-    }
-    .contactdiv{
-        width: 100%;
-    }
-    .leftText{
-        font-size: 2.5rem;
-    }
+  .carousel-btn {
+    margin-top: 45%;
+    height: 10%;
+  }
+  .heading-text {
+    font-size: 1.5rem;
+  }
+  .heading-text2 {
+    font-size: 1rem;
+  }
+  .notimpo {
+    display: none;
+  }
+  .contactinputs {
+    width: 100%;
+  }
+  .contactdiv {
+    width: 100%;
+  }
+  .leftText {
+    font-size: 2.5rem;
+  }
 }
