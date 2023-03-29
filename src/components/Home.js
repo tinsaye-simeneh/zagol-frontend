@@ -12,18 +12,18 @@ const Home = () => {
 
   const handleBuy = (id, title, price) => {
     console.log(id, title, price);
-    if(localStorage.getItem("LoginStatus") === "false"){
-    if (localStorage.getItem("itemID") === null) {
-      localStorage.setItem("itemID", id);
-      localStorage.setItem("itemName", title);
-      localStorage.setItem("itemPrice", price);
-      alert("You can only buy one item at a time");
-      window.location.href = "/checkout";
+    if (localStorage.getItem("loginStatus") === "true") {
+      if (localStorage.getItem("itemID") === null) {
+        localStorage.setItem("itemID", id);
+        localStorage.setItem("itemName", title);
+        localStorage.setItem("itemPrice", price);
+        alert("You can only buy one item at a time");
+        window.location.href = "/checkout";
+      }
+    } else {
+      alert("You must be logged in to buy an item");
+      window.location.href = "/login";
     }
-  }else{
-    alert("You must be logged in to buy an item");
-    window.location.href = "/login";
-  }
   };
 
   const responsive = {
@@ -94,7 +94,7 @@ const Home = () => {
           data-slide="prev"
         >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only"></span>
+          <span class="sr-only">Previous</span>
         </a>
         <a
           class="carousel-control-next bg-dark"
@@ -103,7 +103,7 @@ const Home = () => {
           data-slide="next"
         >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only"></span>
+          <span class="sr-only">Next</span>
         </a>
       </div>
       <div class="row mx-auto text-center bg-silver py-5">

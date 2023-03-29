@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 const Checkout = () => {
   const ItemID = localStorage.getItem("itemID");
@@ -8,6 +9,18 @@ const Checkout = () => {
 
   const handleSuccess = () => {
     if (loginStatus !== "true") {
+      axios
+        .post("http://home.heyeman.com/buy/purchase", {
+          itemID: ItemID,
+          itemName: ItemName,
+          itemPrice: ItemPrice,
+        })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
       alert("Payment Successful");
       localStorage.clear();
       window.location.href = "/";

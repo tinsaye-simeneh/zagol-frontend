@@ -3,13 +3,12 @@ import logo from "../assets/images/logo.png";
 import { Outlet, Link } from "react-router-dom";
 
 const Navbar = () => {
-
   const LoginStat = localStorage.getItem("loginStatus");
   let Redirect = "";
 
-  if(LoginStat === "true"){
+  if (LoginStat === "true") {
     Redirect = "/profile";
-  }else{
+  } else {
     Redirect = "/login";
   }
 
@@ -19,7 +18,7 @@ const Navbar = () => {
         <div className="container py-3">
           <a className="navbar-brand text-dark" href="./Home">
             <img className="logo" src={logo} alt="logo..." />
-           Zagol Arts
+            Zagol Arts
           </a>
           <button
             className="navbar-toggler"
@@ -43,6 +42,41 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
+              <li className="nav-item mt-2 mx-2">
+                <div class="dropdown show text-secondary">
+                  <a
+                    class="btn btn-white dropdown-toggle text-secondary text-dark"
+                    href="#"
+                    role="button"
+                    id="dropdownMenuLink"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Category
+                  </a>
+                  <div
+                    class="dropdown-menu text-center border-0"
+                    aria-labelledby="dropdownMenuLink"
+                  >
+                    <Link to="/category" class="dropdown-item">
+                      paint 1
+                    </Link>
+                    <Link to="/category" class="dropdown-item">
+                      paint 2
+                    </Link>
+                    <Link to="/category" class="dropdown-item">
+                      paint 3
+                    </Link>
+                    <Link to="/category" class="dropdown-item">
+                      paint 4
+                    </Link>
+                    <Link to="/category" class="dropdown-item">
+                      paint 5
+                    </Link>
+                  </div>
+                </div>
+              </li>
               <li className="nav-item mt-2 mx-4">
                 <Link to="/exclusive" className="nav-link">
                   Exclusive Order
@@ -61,7 +95,7 @@ const Navbar = () => {
               <li className="nav-item mx-4" id="Account">
                 <Link to={Redirect} className="nav-link">
                   <button className="btn btn-outline-dark full-width">
-                  Account
+                    Account
                   </button>
                 </Link>
               </li>
