@@ -1,14 +1,35 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../index.css";
+import axios from "axios";
 
 const Exclusive = () => {
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [size, setSize] = useState("");
   const [photo, setPhoto] = useState("");
   const [type, setType] = useState("");
-  const [description, setDescription] = useState("");
+
+  const handleOrder = (e) => {
+    e.preventDefault();
+    axios
+      .post("https://home.heyeman.com/buy/exclusive", {
+        name: name,
+        size: size,
+        email: email,
+        photo: photo,
+        type: type,
+      })
+      .then((res) => {
+        console.log(res);
+        alert(
+          "Thanks for your order, we will get back to you as soon as possible."
+        );
+        window.location.href = "/";
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="container-fluid bg-silver py-4">
@@ -16,14 +37,12 @@ const Exclusive = () => {
         <div className="col-md-6">
           <h1
             className="caros text-dark px-5 pt-5 leftText"
-            style={{fontWeight: "bold" }}
+            style={{ fontWeight: "bold" }}
           >
             Lets Chat <br />
             Tell me about <br /> your Art specifications
           </h1>
-          <p
-            className="caros text-dark px-5 pt-2"
-          >
+          <p className="caros text-dark px-5 pt-2">
             Lets create something better
           </p>
         </div>
@@ -37,40 +56,51 @@ const Exclusive = () => {
               className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs"
               placeholder="Full Name"
               onChange={(e) => setName(e.target.value)}
-            /> <input
-            type="email"
-            className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-
+              required
+            />{" "}
             <input
-              type="text"
+              type="email"
               className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs"
-              placeholder="Size"
-              onChange={(e) => setSize(e.target.value)}
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
+            <select
+              name="type"
+              id="type"
+              className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs pe-4"
+              onChange={(e) => setType(e.target.value)}
+              required
+            >
+              <option value="paint1">Paint1</option>
+              <option value="paint2">Paint2</option>
+              <option value="paint3">Paint3</option>
+              <option value="paint4">Paint4</option>
+            </select>
+            <select
+              name="size"
+              id="size"
+              className="border border-secondary mt-1 bg-white text-secondary rounded p-2 mb-3 contactinputs pe-4"
+              onChange={(e) => setSize(e.target.value)}
+              required
+            >
+              <option value="paint1">2x3</option>
+              <option value="paint2">2x4</option>
+              <option value="paint3">3x5</option>
+              <option value="paint4">4x3</option>
+            </select>
             <input
               type="file"
               className="border border-secondary bg-white text-secondary rounded p-2 mb-3 contactinputs"
               placeholder="photo Upload"
               onChange={(e) => setPhoto(e.target.value)}
+              required
             />
-            <input
-              type="text"
-              className="border border-secondary bg-white text-secondary rounded p-2 mb-3 contactinputs"
-              placeholder="Type of art"
-              onChange={(e) => setType(e.target.value)}
-            />
-            <textarea
-              className="border border-secondary bg-white text-secondary rounded p-2 mb-3 contactinputs"
-              style={{ resize: "none" }}
-              cols="30"
-              rows="5"
-              placeholder="Description of the art"
-              onChange={(e) => setDescription(e.target.value)}
-            />
-            <button className="btn btn-success mt-3 contactinputs">
+            <button
+              className="btn btn-success mt-3 contactinputs"
+              type="submit"
+              onClick={handleOrder}
+            >
               Order
             </button>
           </form>

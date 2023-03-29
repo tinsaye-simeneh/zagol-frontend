@@ -6,21 +6,24 @@ const Checkout = () => {
   const ItemName = localStorage.getItem("itemName");
   const ItemPrice = localStorage.getItem("itemPrice");
   const loginStatus = localStorage.getItem("loginStatus");
+  const id = localStorage.getItem("id");
+
+  const request = () => {
+    axios
+      .post("http://home.heyeman.com/buy/purchase", {
+        userId: id,
+        artName: ItemName,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const handleSuccess = () => {
     if (loginStatus !== "true") {
-      axios
-        .post("http://home.heyeman.com/buy/purchase", {
-          itemID: ItemID,
-          itemName: ItemName,
-          itemPrice: ItemPrice,
-        })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
       alert("Payment Successful");
       localStorage.clear();
       window.location.href = "/";
@@ -30,18 +33,33 @@ const Checkout = () => {
     }
   };
 
+  const handleCancel = () => {
+    localStorage.removeItem("itemID");
+    localStorage.removeItem("itemName");
+    localStorage.removeItem("itemPrice");
+    window.location.href = "/";
+  };
+
   return (
     <div className="container text-center my-5">
       <div className="row">
         <div className="col-md-6 rounded border p-4 mx-auto">
           <h1> Checkout </h1> <p> Item ID: {ItemID} </p>{" "}
           <p> Item Name: {ItemName} </p> <p> Item Price: {ItemPrice} </p>{" "}
-          <a className="btn btn-success mx-3" onSubmit={handleSuccess}>
+          <button
+            className="btn btn-success mx-3"
+            type="submit"
+            onClick={(e) => handleSuccess(e)}
+          >
             Buy Now{" "}
-          </a>{" "}
-          <a className="btn btn-danger" href="/">
+          </button>{" "}
+          <button
+            type="submit"
+            className="btn btn-danger"
+            onClick={handleCancel}
+          >
             Cancel{" "}
-          </a>{" "}
+          </button>{" "}
         </div>{" "}
       </div>{" "}
     </div>

@@ -24,7 +24,7 @@ export default function Signup() {
         localStorage.setItem("email", response.data.userDetails.email);
         localStorage.setItem("Firstname", response.data.userDetails.firstname);
         localStorage.setItem("LastName", response.data.userDetails.lastname);
-        localStorage.setItem("id", response.data.userDetails.id);
+        localStorage.setItem("id", response.data.userDetails._id);
         localStorage.setItem(
           "phoneNumber",
           response.data.userDetails.phoneNumber
