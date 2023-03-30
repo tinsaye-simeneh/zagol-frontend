@@ -8,6 +8,7 @@ import Signup from "./components/Signup";
 import Exclusive from "./components/Exclusive";
 import Checkout from "./components/Checkout";
 import Profile from "./components/Profile";
+import Category from "./components/Category";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="signup" element={<Signup />} />
             <Route path="checkout" element={<Checkout />} />
             <Route path="profile" element={<Profile />} />
+            <Route path="category" element={<Category />} />
           </Route>
         </Routes>
       </BrowserRouter>

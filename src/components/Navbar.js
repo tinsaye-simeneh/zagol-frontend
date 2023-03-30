@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo.jpg";
 import { Outlet, Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -17,8 +17,14 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-white pt-3">
         <div className="container py-3">
           <a className="navbar-brand text-dark" href="./Home">
-            <img className="logo" src={logo} alt="logo..." />
-            Zagol Arts
+            <img
+              className="logo"
+              src={logo}
+              alt="logo..."
+              style={{
+                width: "150px",
+              }}
+            />
           </a>
           <button
             className="navbar-toggler"
