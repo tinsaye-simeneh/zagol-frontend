@@ -3,6 +3,9 @@ import "../index.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CarouselImg from "../assets/images/dashboard.png";
+import CarouselImg1 from "../assets/images/1.png";
+import CarouselImg2 from "../assets/images/2.png";
+import CarouselImg3 from "../assets/images/3.png";
 import { Data } from "./data.js";
 
 const Home = () => {
@@ -59,32 +62,26 @@ const Home = () => {
           <div class="carousel-item active">
             <img
               class="w-100 d-block carousel-img"
-              src={CarouselImg}
+              src={CarouselImg1}
               alt="First slide"
             />
-            <div class="carousel-caption d-none d-md-block bg-dark">
+            {/* <div class="carousel-caption d-none d-md-block bg-dark">
               <h5>Text test</h5>
-            </div>
+            </div> */}
           </div>
           <div class="carousel-item">
             <img
               class="d-block w-100 carousel-img"
-              src={CarouselImg}
+              src={CarouselImg2}
               alt="Second slide"
             />
-            <div class="carousel-caption d-none d-md-block bg-dark">
-              <h5>Text test</h5>
-            </div>
           </div>
           <div class="carousel-item">
             <img
               class="d-block w-100 carousel-img mx-5"
-              src={CarouselImg}
+              src={CarouselImg3}
               alt="Third slide"
             />
-            <div class="carousel-caption d-none d-md-block bg-dark">
-              <h5>Text test</h5>
-            </div>
           </div>
         </div>
         <a
