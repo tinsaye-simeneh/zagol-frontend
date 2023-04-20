@@ -10,7 +10,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://home.heyeman.com/users/auth/login", {
+      .post("https://backend.zagolarts.com/users/auth/login", {
         email: email,
         password: password,
       })

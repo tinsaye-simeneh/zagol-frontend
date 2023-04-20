@@ -11,7 +11,7 @@ const ContactUs = () => {
   const handleContact = (e) => {
     e.preventDefault();
     axios
-      .post("https://home.heyeman.com/users/contact", {
+      .post("https://backend.zagolarts.com/users/contact", {
         name: name,
         email: email,
         subject: subject,

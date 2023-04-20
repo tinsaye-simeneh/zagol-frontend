@@ -13,7 +13,7 @@ export default function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://home.heyeman.com/users/auth/register", {
+      .post("https://backend.zagolarts.com/users/auth/register", {
         email: email,
         password: password,
         firstname: fname,

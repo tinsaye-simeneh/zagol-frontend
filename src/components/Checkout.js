@@ -10,7 +10,7 @@ const Checkout = () => {
 
   const request = () => {
     axios
-      .post("http://home.heyeman.com/buy/purchase", {
+      .post("https://backend.zagolarts.com/buy/purchase", {
         userId: id,
         artName: ItemName,
       })
