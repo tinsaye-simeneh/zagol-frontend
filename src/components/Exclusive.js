@@ -72,10 +72,11 @@ const Exclusive = () => {
               onChange={(e) => setType(e.target.value)}
               required
             >
-              <option value="paint1">Paint1</option>
-              <option value="paint2">Paint2</option>
-              <option value="paint3">Paint3</option>
-              <option value="paint4">Paint4</option>
+              <option value="painting">painting</option>
+              <option value="Print">Print</option>
+              <option value="WorkOnpaper">Work on paper </option>
+              <option value="Photography">Photography</option>
+              <option value="TexilePrint">Texile print</option>
             </select>
             <select
               name="size"
@@ -84,10 +85,11 @@ const Exclusive = () => {
               onChange={(e) => setSize(e.target.value)}
               required
             >
-              <option value="paint1">2x3</option>
-              <option value="paint2">2x4</option>
-              <option value="paint3">3x5</option>
-              <option value="paint4">4x3</option>
+              <option value="mini">mini</option>
+              <option value="small">small</option>
+              <option value="medium">medium</option>
+              <option value="large">large</option>
+              <option value="overSize">over size</option>
             </select>
             <input
               type="file"

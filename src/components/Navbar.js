@@ -66,19 +66,19 @@ const Navbar = () => {
                     aria-labelledby="dropdownMenuLink"
                   >
                     <Link to="/category" class="dropdown-item">
-                      paint 1
+                      painting
                     </Link>
                     <Link to="/category" class="dropdown-item">
-                      paint 2
+                      Print
                     </Link>
                     <Link to="/category" class="dropdown-item">
-                      paint 3
+                      Work on paper
                     </Link>
                     <Link to="/category" class="dropdown-item">
-                      paint 4
+                      Photography
                     </Link>
                     <Link to="/category" class="dropdown-item">
-                      paint 5
+                      Texile print
                     </Link>
                   </div>
                 </div>
