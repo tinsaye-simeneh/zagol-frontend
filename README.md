@@ -1,1 +1,1 @@
-- Zagol ecommerce site Frontend.
+- Zagol arts site Frontend.
