@@ -61,7 +61,7 @@ const Home = () => {
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
-              class="w-100 d-block carousel-img"
+              class="d-block w-75 carousel-img mx-auto"
               src={CarouselImg1}
               alt="First slide"
             />
@@ -71,14 +71,14 @@ const Home = () => {
           </div>
           <div class="carousel-item">
             <img
-              class="d-block w-100 carousel-img"
+              class="d-block w-75 carousel-img mx-auto"
               src={CarouselImg2}
               alt="Second slide"
             />
           </div>
           <div class="carousel-item">
             <img
-              class="d-block w-100 carousel-img mx-5"
+              class="d-block w-75 carousel-img mx-auto"
               src={CarouselImg3}
               alt="Third slide"
             />

@@ -72,11 +72,12 @@ const Exclusive = () => {
               onChange={(e) => setType(e.target.value)}
               required
             >
-              <option value="painting">painting</option>
+              <option value="painting">Painting</option>
               <option value="Print">Print</option>
               <option value="WorkOnpaper">Work on paper </option>
               <option value="Photography">Photography</option>
               <option value="TexilePrint">Texile print</option>
+              <option value="stringArt">String Art</option>
             </select>
             <select
               name="size"

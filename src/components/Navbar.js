@@ -80,6 +80,9 @@ const Navbar = () => {
                     <Link to="/category" class="dropdown-item">
                       Texile print
                     </Link>
+                    <Link to="/category" class="dropdown-item">
+                      String Art
+                    </Link>
                   </div>
                 </div>
               </li>
