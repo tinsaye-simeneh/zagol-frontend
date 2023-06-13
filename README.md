@@ -1,1 +1,1 @@
-- Zagol arts site Frontend
+- Zagol arts site Frontend.
